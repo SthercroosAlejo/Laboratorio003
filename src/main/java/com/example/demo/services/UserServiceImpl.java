@@ -32,7 +32,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserByUsernameAndPassword(String username, String password) {
-        Optional<User> user = userRepository.findByUsername(username, password);
+        Optional<User> user = userRepository.findByUsernameAndPassword(username, password);
         if (user.isPresent()) {
             return user.get();
         }
